@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="saat">
+      <div id="clock"></div>
+    </div>
+
+    <script>
+      function updateClock() {
+        moment.locale("tr");
+        var now = moment().format("LL LTS"); // Saati belirli bir formatta alıyoruz
+        document.getElementById("clock").innerText = now; // Saati HTML'e ekliyoruz
+      }
+
+      setInterval(updateClock, 1000);
+
+      updateClock();
+    </script>
+    <script src="moment-with-locales.min.js"></script>
+  </body>
+</html>
